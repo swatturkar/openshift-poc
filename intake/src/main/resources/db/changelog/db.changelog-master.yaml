@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - preConditions:
+    - runningAs:
+        username: postgres
+  - include:
+          file: db/changelog/changeset-01.sql
