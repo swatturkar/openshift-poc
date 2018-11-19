@@ -24,6 +24,12 @@ public class MainController {
     @Autowired
     private RequestLogRepository requestLogRepository;
 
+    @GetMapping(path="/health")
+    public @ResponseBody String checkHealth()
+    {
+        return "Ok";
+    }
+
     @GetMapping(path = "/add")
     public @ResponseBody String addNewReqeuest(@RequestParam String request){
         RequestLog log = new RequestLog();
