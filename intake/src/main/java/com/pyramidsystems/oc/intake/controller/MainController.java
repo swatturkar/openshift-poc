@@ -1,6 +1,7 @@
 package com.pyramidsystems.oc.intake.controller;
 
-import com.pyramidsystems.oc.intake.events.producer.MessageSender;
+//import com.pyramidsystems.oc.intake.events.producer.MessageSender;
+
 import com.pyramidsystems.oc.intake.jpa.entity.RequestLog;
 import com.pyramidsystems.oc.intake.jpa.repo.RequestLogRepository;
 import org.slf4j.Logger;
@@ -12,9 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -26,8 +25,8 @@ public class MainController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainController.class);
 
-    @Autowired
-    private MessageSender messageSender;
+//    @Autowired
+//    private MessageSender messageSender;
 
     @Autowired
     private RequestLogRepository requestLogRepository;
@@ -44,7 +43,7 @@ public class MainController {
         log.setText(request);
         log = requestLogRepository.save(log);
 
-        messageSender.send(request);
+        //messageSender.send(request);
         LOG.info("Added new request {}", log.getIdentifier());
         return log.getIdentifier();
     }
@@ -71,7 +70,7 @@ public class MainController {
         log.setText(ticker);
         log = requestLogRepository.save(log);
 
-        messageSender.send(ticker);
+        //messageSender.send(ticker);
         LOG.info("Added new request {}", log.getIdentifier());
         return ticker;
 
