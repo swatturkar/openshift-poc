@@ -9,7 +9,7 @@ $(function () {
 
 function getDashboard(){
 
-    $.get( "http://localhost/request-api/intake/dashboard", function( data ) {
+    $.get( "http://request-intake.okd.pyramidchallenges.com/request-api/intake/dashboard", function( data ) {
 
       $("#dashboardData").html("");
 
@@ -21,7 +21,7 @@ function getDashboard(){
 }
 
 function connect() {
-    var socket = new SockJS('http://localhost/request-api/intake-websocket');
+    var socket = new SockJS('http://request-intake.okd.pyramidchallenges.com/request-api/intake-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         stompClient.subscribe('/topic/tickers', function (ticker) {
