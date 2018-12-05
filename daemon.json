@@ -1,0 +1,3 @@
+{
+  "insecure-registries" : ["nexus3-registry.okd.pyramidchallenges.com:80", "nexus3-registry-o.okd.pyramidchallenges.com", "nexus3-o.okd.pyramidchallenges.com", "192.168.99.101:5000"]
+}
