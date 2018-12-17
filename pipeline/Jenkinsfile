@@ -5,6 +5,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'git clone https://github.com/swatturkar/openshift-poc.git'
+                sh 'cd openshift-poc/intake'
+                sh 'gradle clean build'
                 sh 'gradle --version'
             }
         }
