@@ -22,7 +22,7 @@ node {
     }
     
    stage('Push image') {
-        docker.withRegistry('http:nexus3-registry.okd.pyramidchallenges.com/docker-devt/my-image', '0be12b2b-d89f-405d-bd08-cbfaceebe02d') {
+        docker.withRegistry('http://nexus3-registry.okd.pyramidchallenges.com/docker-devt/my-image', '0be12b2b-d89f-405d-bd08-cbfaceebe02d') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
