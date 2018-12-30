@@ -7,4 +7,11 @@ node {
         checkout scm
     }
 
+    stage('Build jar') {
+	dir ('intake'){
+		/var/jenkins_home/tools/hudson.plugins.gradle.GradleInstallation/gradle-5.0/bin/gradle build	
+	}
+    }
+
+
 }
